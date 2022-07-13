@@ -4,9 +4,6 @@ import Conf from "../../Config";
 
 
 async function fetchGraphQL(query: string, query_name: string, variables?: any, api_url = Conf.hasura_url) {
-    // NOTE:
-    // HTTP caching with graphql is kinda broken, sort of. The response doesn't have the right headers set
-    // for them to be cached. could maybe get around it by way of using GET requests in some cases.
     const result = await fetch(
         api_url,
         {
@@ -32,7 +29,7 @@ export const ipfsUriTransformer: TransformImage = (
     alt: string,
     title: string | null) => {
     if (src.startsWith('ipfs://'))
-        return Conf.randomPublicIpfsGateway() + '/ipfs/' + src.slice(7);
+        return Conf.ipfs_public_gateways[0] + '/ipfs/' + src.slice(7);
     return uriTransformer(src);
 }
 
