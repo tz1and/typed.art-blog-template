@@ -24,6 +24,7 @@ export const TypedArtBlog: React.FC<TypedArtBlogProps> = (props) => {
     // Set tag state when prop changes.
     useEffect(() => {
         setTag(props.tag);
+        setPage(1);
     }, [props.tag]);
 
     // Fetch new posts when tag stage changes.
