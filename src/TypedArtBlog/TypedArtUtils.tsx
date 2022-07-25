@@ -94,9 +94,9 @@ export async function fetchTypedArtPost(id: number): Promise<TypedArtPost> {
 
 export const typedArtUserLink = (post: TypedArtPost) => {
     if (post.userprofile)
-        return <a className="link-secondary" href={"https://typed.art/" + post.userprofile.user_name} target="_blank" rel="noreferrer">{post.userprofile.user_name}</a>
+        return <a className="link-secondary" href={"https://typed.art/@" + post.userprofile.user_name} target="_blank" rel="noreferrer">{post.userprofile.user_name}</a>
     else
-        return <a className="link-secondary" href={"https://typed.art/" + post.minter_address} target="_blank" rel="noreferrer">{post.minter_address}</a>
+        return <a className="link-secondary" href={"https://typed.art/@" + post.minter_address} target="_blank" rel="noreferrer">{post.minter_address}</a>
 }
     
 export const typedArtPostLink = (post: TypedArtPost) => {
