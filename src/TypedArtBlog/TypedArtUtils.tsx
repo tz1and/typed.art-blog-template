@@ -1,9 +1,9 @@
 import { uriTransformer } from "react-markdown";
 import { TransformImage } from "react-markdown/lib/ast-to-react";
-import Conf from "../../Config";
+import Conf from "../Config";
 
 
-async function fetchGraphQL(query: string, query_name: string, variables?: any, api_url = Conf.hasura_url) {
+async function fetchGraphQL(query: string, query_name: string, variables?: any, api_url: string = "https://api.typed.art/v1/graphql") {
     const result = await fetch(
         api_url,
         {
@@ -66,7 +66,7 @@ export async function fetchTypedArtPosts(postType: TypedArtPostType, limit: numb
                     user_name
                 }
             }
-        }`, 'getFeaturedPosts', { tag: postType, limit: limit, offset: offset, whitelist: whitelist }, 'https://api.typed.art/v1/graphql');
+        }`, 'getFeaturedPosts', { tag: postType, limit: limit, offset: offset, whitelist: whitelist });
 
     return res.tokens;
 }
@@ -85,7 +85,7 @@ export async function fetchTypedArtPost(id: number): Promise<TypedArtPost> {
                     user_name
                 }
             }
-        }`, 'getFeaturedPost', { id: id, whitelist: whitelist, validTags: validTags }, 'https://api.typed.art/v1/graphql');
+        }`, 'getFeaturedPost', { id: id, whitelist: whitelist, validTags: validTags });
 
     if (res.tokens.length > 0)
         return res.tokens[0];
