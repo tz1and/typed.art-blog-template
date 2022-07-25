@@ -2,6 +2,8 @@
 
 A template for a blog using [typed.art](https://typed.art) with React and Markdown.
 
+You'll probably want to change the categories (*TypedArtPostType*) and *whitelist* in src/TypedArtBlog/TypedArtUtils.tsx.
+
 Refer to [this issue](https://github.com/tz1and/tezland-issues/issues/117) for formatting, tags, etc.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
