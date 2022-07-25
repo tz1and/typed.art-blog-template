@@ -17,6 +17,10 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+      {/* Credits, feel free to remove. */}
+      <div className="credit-overlay">
+        Made with <a href="https://github.com/tz1and/typed.art-blog-template" target="_blank" rel="noreferrer">typed.art-blog-template</a> by <a href="https://twitter.com/tz1and" target="_blank" rel="noreferrer">@852Kerfunkle</a> &#129293;
+      </div>
     </HelmetProvider>
   );
 }
