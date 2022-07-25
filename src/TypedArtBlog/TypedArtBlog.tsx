@@ -37,7 +37,7 @@ export const TypedArtBlog: React.FC<TypedArtBlogProps> = (props) => {
     const postElements: JSX.Element[] = [];
 
     const sahreLink = (post: TypedArtPost) => {
-        return <Link className="link-secondary" to={"/blog/" + post.token_id}>Share link</Link>;
+        return <Link className="link-secondary" to={"/" + post.token_id}>Share link</Link>;
     }
 
     if (posts)
