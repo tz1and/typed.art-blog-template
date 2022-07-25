@@ -1,4 +1,4 @@
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { TypedArtBlog } from './TypedArtBlog/TypedArtBlog';
 import { TypedArtPostType } from './TypedArtBlog/TypedArtUtils';
